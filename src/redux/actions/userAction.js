@@ -14,6 +14,12 @@ export const userAction = async (dispatch) => {
     );
     dispatch({ type: GET_USERS_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: GET_USERS_FAIL, payload: error });
+    dispatch({
+      type: GET_USERS_FAIL,
+      payload:
+        error.data && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
   }
 };
