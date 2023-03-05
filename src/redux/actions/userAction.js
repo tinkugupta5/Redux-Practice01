@@ -6,7 +6,7 @@ import {
   GET_USERS_FAIL,
 } from "../constansts/userConstants";
 
-export const userAction = async (dispatch) => {
+export const userAction = () => async (dispatch) => {
   try {
     dispatch({ type: GET_USERS_REQUEST });
     const { data } = await axios.get(
