@@ -6,7 +6,6 @@ import { userReducer } from "./redux/reducers/userReducer";
 const rootReducer = combineReducers({
   userList: userReducer,
 });
-
 const intialState = {};
 const middleware = [thunk];
 const store = createStore(
