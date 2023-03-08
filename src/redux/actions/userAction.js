@@ -12,6 +12,7 @@ export const userAction = () => async (dispatch) => {
     const { data } = await axios.get(
       "https://jsonplaceholder.typicode.com/users"
     );
+
     dispatch({ type: GET_USERS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
